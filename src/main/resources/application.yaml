@@ -2,5 +2,12 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/customers
+  kafka:
+    bootstrap-servers: "localhost:9092"
+    consumer:
+      group-id: needLoanEventConsumerGroup
+      client-id: client1
+      auto-offset-reset: earliest
+
 server:
   port: 8081
