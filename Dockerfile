@@ -6,4 +6,6 @@ COPY ${DEPENDENCY}/BOOT-INF/classes app
 COPY ${DEPENDENCY}/META-INF app/META-INF
 COPY ${DEPENDENCY}/BOOT-INF/lib app/lib
 
+EXPOSE 8081
+
 ENTRYPOINT ["java", "-cp", "app:app/lib/*", "com.swapnilsankla.customerservice.ApplicationKt"]

@@ -1,9 +1,9 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/customers
+      uri: ${MONGO_URL:mongodb://localhost:27017/customers}
   kafka:
-    bootstrap-servers: "localhost:9092"
+    bootstrap-servers: ${KAFKA_URL:kafka:9092}
     consumer:
       group-id: needLoanEventConsumerGroup
       client-id: client1

@@ -1,0 +1,46 @@
+version: "2.4"
+services:
+  mongo-service:
+    image: mongo
+    container_name: mongo
+    mem_limit: 500m
+    ports:
+      - "27017:27017"
+
+  admin-mongo-service:
+    image: mrvautin/adminmongo
+    container_name: adminmongo
+    mem_limit: 500m
+    links: ['mongo-service:mongo']
+    environment:
+      CONN_NAME: 'localConnection'
+      DB_HOST: 'mongo'
+      HOST: 0.0.0.0
+    ports:
+      - "1234:1234"
+
+  customer-service:
+    image: com.swapnilsankla/customerservice
+    container_name: customerservice
+    mem_limit: 500m
+    depends_on:
+      - kafka
+    ports:
+      - "8081:8081"
+    environment:
+      - MONGO_URL: mongodb://mongo:27017/customers
+      - KAFKA_URL: kafka:9092
+
+  kafka:
+    image: spotify/kafka
+    container_name: kafka
+    ports:
+      - "2181:2181"
+      - "9092:9092"
+    expose:
+      - 2181
+      - 9092
+    environment:
+      - ADVERTISED_HOST:localhost
+      - ADVERTISED_PORT:9092
+      - KAFKA_ADVERTISED_HOST_NAME:kafka
