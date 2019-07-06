@@ -3,4 +3,4 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-rootProject.name = "customerservice"
+rootProject.name = "customer-service"

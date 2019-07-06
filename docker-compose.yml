@@ -20,8 +20,8 @@ services:
       - "1234:1234"
 
   customer-service:
-    image: com.swapnilsankla/customerservice
-    container_name: customerservice
+    image: com.swapnilsankla/customer-service
+    container_name: customer-service
     mem_limit: 500m
     depends_on:
       - kafka
