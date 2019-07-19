@@ -13,7 +13,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: metrics,prometheus
+        include: metrics,prometheus,info,health
 
 server:
   port: 8081
