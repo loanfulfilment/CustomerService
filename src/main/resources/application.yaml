@@ -5,8 +5,7 @@ spring:
   kafka:
     bootstrap-servers: ${KAFKA_URL:kafka:9092}
     consumer:
-      group-id: needLoanEventConsumerGroup
-      client-id: client1
+      group-id: needLoanEvent-customer-consumer-group
       auto-offset-reset: earliest
 
 management:
