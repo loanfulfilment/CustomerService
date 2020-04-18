@@ -1,5 +1,5 @@
-# CustomerService
-[![Build Status](https://travis-ci.org/loanfulfilment/customer-service.svg?branch=master)](https://travis-ci.org/loanfulfilment/customer-service.svg?branch=master)
+# customer-service
+[![CircleCI](https://circleci.com/gh/loanfulfilment/loan-gateway.svg?style=svg)](https://circleci.com/gh/loanfulfilment/customer-service)
 
 * Insert test data into mongo database:
 `cd scripts`
